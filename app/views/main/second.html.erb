@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>lotto 번호~~</title>
+    </head>
+    <body>
+        <table border="1 solid black">
+            
+            <tr align="center">
+                <td align="center">1번 번호</td>
+                <td align="center">1번 빈도수</td>
+                <td align="center">2번 번호</td>
+                <td align="center">2번 빈도수</td>
+                <td align="center">3번 번호</td>
+                <td align="center">3번 빈도수</td>
+                <td align="center">4번 번호</td>
+                <td align="center">4번 빈도수</td>
+                <td align="center">5번 번호</td>
+                <td align="center">5번 빈도수</td>
+                <td align="center">6번 번호</td>
+                <td align="center">6번 빈도수</td>
+            </tr>
+            <% for i in (0..4) do %>
+            
+              <tr align="center">
+                <% @lotto_random[i] = @top_ten.sample(6) %>
+    
+                <% @lotto_random[i].each { |a| %>
+                <td align="center" bgcolor="#58FA58"><%=a.Num.to_s %></td> <td align="center"><%= a.Fre.to_s%></td>
+                <% } %>
+              </tr>
+        <% end %>
+    
+        </table>
+    </body>
+</html>
